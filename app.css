@@ -6,6 +6,22 @@ img {
 .gem-card {
     position: relative;
     width: 500px;
+    background-color: white;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    /* border: solid;
+    border-color: black; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#gem-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gem-name {
+    background-color: white;
 }
 
 .overlay-info {
@@ -16,10 +32,12 @@ img {
     background-color: white;
     overflow: hidden;
     width: 100%;
-    height: 0;
-    transition: 5s ease;
+    height: 20%;
+    opacity: 80%;
+    transition: 1s ease;
   }
 
   .gem-card:hover .overlay-info {
-      height: 100%;
+      height: 60%;
+      opacity: 80%;
   }
