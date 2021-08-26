@@ -1,86 +1,3 @@
-/* img {
-    height: 400px;
-    width: 700px;
-}
-
-.gem-card {
-    position: relative;
-    width: 700px;
-    background-color: white;
-    margin-bottom: 25px;
-    margin-right: 25px;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: none;
-}
-
-/* #gem-container {
-    display: none;
-    justify-content: center;
-    flex-wrap: wrap;
-} */
-
-/* #gem-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1000px;
-    margin: auto;
-    position: relative;
-} */
-  
-/* .gem-card {
-    display: none;
-    width: 500px;
-} */
-/* 
-#prev-button, #next-button {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: all 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-} */
-
-/* .slide-container .prev:hover,
-.slide-container .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-} */
-
-/* #prev-button {
-  left: 50px;
-}
-
-#next-button {
-  right: 50px;
-}
-
-.overlay-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: white;
-    overflow: hidden;
-    width: 100%;
-    height: 15%;
-    opacity: 80%;
-    transition: 1s ease;
-}
-
-.gem-card:hover .overlay-info {
-    height: 60%;
-    opacity: 80%;
-} */ 
-
 img {
     height: 300px;
     width: 500px;
@@ -94,6 +11,11 @@ img {
     margin-right: 25px;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a {
+    color: rgb(45, 130, 241);
+    text-decoration: underline;
 }
 
 #gem-container {
@@ -116,6 +38,6 @@ img {
 }
 
 .gem-card:hover .overlay-info {
-    height: 60%;
+    height: 70%;
     opacity: 80%;
 }

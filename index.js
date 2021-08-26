@@ -43,13 +43,36 @@ function renderGemCard(gem, gemContainer) {
     overlayDiv.className = "overlay-info"
 
     const activity = document.createElement("p");
-    activity.textContent = `Try: ${gem.activities[0]}`;
-    console.log(activity);
+    randomizeActivity(gem, activity);
+
+    const anotherActivity = document.createElement("a");
+    anotherActivity.textContent = "Maybe something else";
+    anotherActivity.addEventListener("click", event => {
+        randomizeActivity(gem, activity);
+    })
 
     gemContainer.appendChild(gemCard);
     gemCard.append(gemImg, overlayDiv);
-    overlayDiv.append(gemName, heartButton, heartsNum, activity);
+    overlayDiv.append(gemName, heartButton, heartsNum, activity, anotherActivity);
+}
 
+function increaseLike(gem, heartsNum) {
+    gem.likes += 1;
+    heartsNum.textContent = gem.likes;
+
+    fetch(`http://localhost:3000/attractions/${gem.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify({likes: gem.likes})
+    })
+}
+
+function randomizeActivity(gem, activityElement) {
+    randomActivityIndex = Math.floor(Math.random() * gem.activities.length);
+    activityElement.textContent = `Try: ${gem.activities[randomActivityIndex]}`;
 }
 
 function addGem(gemContainer) {
@@ -89,23 +112,22 @@ function sortAttractions(gemArray) {
     gemArray.sort((gemA, gemB) => (gemA.likes > gemB.likes) ? -1 : 1)
 }
 
-function increaseLike(gem, heartsNum) {
-    gem.likes += 1;
-    heartsNum.textContent = gem.likes;
+// function increaseLike(gem, heartsNum) {
+//     gem.likes += 1;
+//     heartsNum.textContent = gem.likes;
 
-    fetch(`http://localhost:3000/attractions/${gem.id}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: JSON.stringify({likes: gem.likes})
-    })
-}
+//     fetch(`http://localhost:3000/attractions/${gem.id}`, {
+//         method: "PATCH",
+//         headers: {
+//             "Content-Type": "application/json",
+//             Accept: "application/json"
+//         },
+//         body: JSON.stringify({likes: gem.likes})
+//     })
+// }
 
 function randomGem(gemArray) {
     const randomButton = document.querySelector("#random-container button");
-    console.log(randomButton);
 
     randomButton.addEventListener("click", event => {
         const randomCardDiv = document.querySelector("#random-gem")
@@ -115,7 +137,6 @@ function randomGem(gemArray) {
         }
 
         const randomGemIndex = Math.floor(Math.random() * gemArray.length);
-        console.log(randomGemIndex)
         const randomGem = gemArray[randomGemIndex];
 
         renderGemCard(randomGem, randomCardDiv);
