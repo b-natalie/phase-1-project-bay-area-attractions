@@ -11,7 +11,7 @@
         "Look at Victorian homes",
         "Enjoy a nice view of the city"
       ],
-      "likes": 4
+      "likes": 22
     },
     {
       "id": 2,
@@ -34,7 +34,7 @@
         "Shop for a variety of vintage items",
         "Visit houses of famous rock musicians"
       ],
-      "likes": 0
+      "likes": 2
     },
     {
       "id": 4,
@@ -81,7 +81,7 @@
         "Learn about the historic Alcatraz prison",
         "Dare to take the Alcatraz night tour"
       ],
-      "likes": 7
+      "likes": 8
     },
     {
       "id": 8,
@@ -95,7 +95,7 @@
         "Explore the California Academy of Sciences",
         "Play sloshball with friends"
       ],
-      "likes": 12
+      "likes": 15
     },
     {
       "id": 9,
@@ -107,7 +107,7 @@
         "Have a beach picnic with friends",
         "Bring spike ball to enjoy friendly competition"
       ],
-      "likes": 2
+      "likes": 3
     },
     {
       "name": "Crissy Field",
@@ -116,7 +116,7 @@
       "activities": [
         "Attend Fleet Week"
       ],
-      "likes": 5,
+      "likes": 6,
       "id": 10
     }
   ]
