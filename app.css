@@ -9,19 +9,19 @@ img {
     background-color: white;
     margin-bottom: 25px;
     margin-right: 25px;
-    /* border: solid;
-    border-color: black; */
+    text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a {
+    color: rgb(45, 130, 241);
+    text-decoration: underline;
 }
 
 #gem-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.gem-name {
-    background-color: white;
 }
 
 .overlay-info {
@@ -35,9 +35,9 @@ img {
     height: 20%;
     opacity: 80%;
     transition: 1s ease;
-  }
+}
 
-  .gem-card:hover .overlay-info {
-      height: 60%;
-      opacity: 80%;
-  }
+.gem-card:hover .overlay-info {
+    height: 70%;
+    opacity: 80%;
+}
