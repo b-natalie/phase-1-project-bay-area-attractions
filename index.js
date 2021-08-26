@@ -1,15 +1,27 @@
+// NEED TO ASK: Is it okay that featured gem has the same id as it's duplicate non-featured gem?
+
 function init() {
     fetch("http://localhost:3000/attractions")
     .then(resp => resp.json())
     .then(data => {
+        // will need access to this gem container across several functions
         const gemContainer = document.querySelector("#gem-container");
+
+        // create a gem array to be able to sort gems on the page according to likes/hearts,
+        // without directly manipulating/sorting items in the db.json to avoid any changes in IDs
         const gemArray = [];
         data.forEach(attraction => {
             gemArray.push(attraction);
         });
         sortAttractions(gemArray);
+
+        // render cards according to our ranked "gems"
         gemArray.forEach(attraction => renderGemCard(attraction, gemContainer));
+
+        // allow user to submit a gem
         addGem(gemContainer);
+
+        // randomly select a gem for the user
         randomGem(gemArray);
     })
 }
@@ -32,7 +44,7 @@ function renderGemCard(gem, gemContainer) {
     heartButton.className = "heart-button";
     heartButton.textContent = "💙";
     heartButton.addEventListener("click", event => {
-        increaseLike(gem, heartsNum);
+        increaseLike(gem);
     })
 
     const heartsNum = document.createElement("h5");
@@ -43,12 +55,18 @@ function renderGemCard(gem, gemContainer) {
     overlayDiv.className = "overlay-info"
 
     const activity = document.createElement("p");
-    randomizeActivity(gem, activity);
+    let currentActivityIndex = 0;
+    activity.textContent = `Try: ${gem.activities[currentActivityIndex]}`;
 
     const anotherActivity = document.createElement("a");
-    anotherActivity.textContent = "Maybe something else";
+    anotherActivity.textContent = "Something else";
     anotherActivity.addEventListener("click", event => {
-        randomizeActivity(gem, activity);
+        if (currentActivityIndex < gem.activities.length - 1) {
+            currentActivityIndex += 1;
+        } else {
+            currentActivityIndex = 0;
+        }
+        activity.textContent = `Try: ${gem.activities[currentActivityIndex]}`;
     })
 
     gemContainer.appendChild(gemCard);
@@ -56,9 +74,15 @@ function renderGemCard(gem, gemContainer) {
     overlayDiv.append(gemName, heartButton, heartsNum, activity, anotherActivity);
 }
 
-function increaseLike(gem, heartsNum) {
+function increaseLike(gem) {
     gem.likes += 1;
-    heartsNum.textContent = gem.likes;
+
+    // in case our gem is featured in the random section, we want to make sure like changes are reflected on both cards
+    const gemArray = document.querySelectorAll(`#gem-${gem.id}`);
+    gemArray.forEach(gemCard => {
+        const gemHeartsNum = gemCard.querySelector(".heart-num");
+        gemHeartsNum.textContent = gem.likes;
+    })
 
     fetch(`http://localhost:3000/attractions/${gem.id}`, {
         method: "PATCH",
@@ -70,11 +94,6 @@ function increaseLike(gem, heartsNum) {
     })
 }
 
-function randomizeActivity(gem, activityElement) {
-    randomActivityIndex = Math.floor(Math.random() * gem.activities.length);
-    activityElement.textContent = `Try: ${gem.activities[randomActivityIndex]}`;
-}
-
 function addGem(gemContainer) {
     const addGemForm = document.querySelector("#add-gem-form");
 
@@ -84,8 +103,10 @@ function addGem(gemContainer) {
         let name = addGemForm.querySelector("#name-input").value;
         let location = addGemForm.querySelector("#location-input").value;
         let image = addGemForm.querySelector("#img-input").value;
-        let userActivity = addGemForm.querySelector("#activity-input").value;
-        let activities = [userActivity];
+        let userActivity1 = addGemForm.querySelector("#activity-input1").value;
+        let userActivity2 = addGemForm.querySelector("#activity-input2").value;
+        let userActivity3 = addGemForm.querySelector("#activity-input3").value;
+        let activities = [userActivity1, userActivity2, userActivity3];
 
         let gem = {
             name,
@@ -94,6 +115,8 @@ function addGem(gemContainer) {
             activities,
             likes: 0
         }
+
+        addGemForm.reset();
 
         fetch("http://localhost:3000/attractions", {
             method: "POST",
@@ -105,26 +128,13 @@ function addGem(gemContainer) {
         })
         .then(resp => resp.json())
         .then(newGem => renderGemCard(newGem, gemContainer))
+
     })
 }
 
 function sortAttractions(gemArray) {
     gemArray.sort((gemA, gemB) => (gemA.likes > gemB.likes) ? -1 : 1)
 }
-
-// function increaseLike(gem, heartsNum) {
-//     gem.likes += 1;
-//     heartsNum.textContent = gem.likes;
-
-//     fetch(`http://localhost:3000/attractions/${gem.id}`, {
-//         method: "PATCH",
-//         headers: {
-//             "Content-Type": "application/json",
-//             Accept: "application/json"
-//         },
-//         body: JSON.stringify({likes: gem.likes})
-//     })
-// }
 
 function randomGem(gemArray) {
     const randomButton = document.querySelector("#random-container button");
@@ -133,6 +143,7 @@ function randomGem(gemArray) {
         const randomCardDiv = document.querySelector("#random-gem")
 
         if (randomCardDiv.firstChild) {
+            console.log(randomCardDiv.firstChild.id)
             randomCardDiv.removeChild(randomCardDiv.firstChild)
         }
 
@@ -140,7 +151,35 @@ function randomGem(gemArray) {
         const randomGem = gemArray[randomGemIndex];
 
         renderGemCard(randomGem, randomCardDiv);
+
+        document.body.scrollTo(0, document.body.scrollHeight);
     })
 }
+
+// function randomGem(gemArray) {
+//     const randomButton = document.querySelector("#random-container button");
+
+//     randomButton.addEventListener("click", event => {
+//         const randomCardDiv = document.querySelector("#random-gem")
+//         let currentRanId = "none";
+//         let newRanIdNum = Math.floor(Math.random() * gemArray.length);
+
+//         if (randomCardDiv.firstChild) {
+//             currentRanId = randomCardDiv.firstChild.id;
+//             console.log(currentRanId);
+//             randomCardDiv.removeChild(randomCardDiv.firstChild);
+//         }
+
+//         while (currentRanId === `gem-${newRanIdNum}`) {
+//             newRanIdNum = Math.floor(Math.random() * gemArray.length);
+//         }
+
+//         const randomGem = gemArray[newRanIdNum];
+
+//         renderGemCard(randomGem, randomCardDiv);
+
+//         document.body.scrollTo(0, document.body.scrollHeight);
+//     })
+// }
 
 init()
