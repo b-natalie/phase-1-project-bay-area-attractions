@@ -7,11 +7,11 @@
       "image": "https://lp-cms-production.imgix.net/2019-06/GettyImages-497616191_medium.jpg",
       "activities": [
         "People watching",
-        "Picnicking with friends",
-        "Touring street art/murals",
-        "Enjoying a nice view of the city"
+        "Picnic with friends",
+        "Take a mural tour around the neighborhood",
+        "Enjoy a legendary view of the city"
       ],
-      "likes": 22
+      "likes": 29
     },
     {
       "id": 2,
@@ -19,8 +19,9 @@
       "location": "Telegraph Hill",
       "image": "https://cdn.vox-cdn.com/thumbor/O7yJqp5OSRRTgOZpMGJAoJ3zSQk=/0x0:1000x667/920x613/filters:focal(428x439:588x599):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/61692881/shutterstock_471839459.0.jpg",
       "activities": [
-        "Sightseeing of the San Francisco Skyline",
-        "Touring of famous murals in the neighborhood"
+        "Take in the view of the San Francisco Skyline",
+        "Tour the famous murals in the neighborhood",
+        "Drink a cappuccino at a local cafe"
       ],
       "likes": 0
     },
@@ -30,9 +31,9 @@
       "location": "North of the Panhandle",
       "image": "https://img.theculturetrip.com/450x/smart/wp-content/uploads/2019/02/k0bh7m.jpg",
       "activities": [
-        "Admiring The Painted Ladies(beautiful Victorian homes)",
-        "Shopping for a variety of vintage items",
-        "Visiting houses of famous rock musicians"
+        "Admire The Painted Ladies(beautiful Victorian homes)",
+        "Shop for a variety of vintage items",
+        "Visit the houses of famous rock musicians"
       ],
       "likes": 2
     },
@@ -42,9 +43,9 @@
       "location": "Embarcadero",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0TeBDGBf5iujgrRGEnG9Uq3kZ0DEdQcqwPA&usqp=CAU",
       "activities": [
-        "Experiencing international wine tours",
-        "Taking off by ferry to hidden areas",
-        "Shopping the Friday Farmer's Market"
+        "Experience international wine tours",
+        "Take off by ferry to hidden areas",
+        "Shop the Friday Farmer's Market"
       ],
       "likes": 2
     },
@@ -54,10 +55,10 @@
       "location": "North Beach",
       "image": "https://redtri.com/wp-content/uploads/2018/09/fishermans-wharf_main_flickr.jpg?w=1000",
       "activities": [
-        "Riding a cable car",
-        "Watching the sea lion center from the pier",
-        "Sampling fresh seafood",
-        "Catching a street performance"
+        "Ride a cable car",
+        "Watch the sea lion center from the pier",
+        "Sample fresh seafood",
+        "Catch a street performance"
       ],
       "likes": 0
     },
@@ -67,8 +68,8 @@
       "location": "Lower Nob Hill",
       "image": "https://www.tripsavvy.com/thmb/hk3JTKWhrkBMBVVXNsmkWpvv8I4=/950x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-109287627-5b66fb4f46e0fb0050fabc66.jpg",
       "activities": [
-        "Shopping at a variety of popular stores",
-        "Ice skating during the holidays"
+        "Shop at a variety of popular stores",
+        "Ice skate during the holidays"
       ],
       "likes": 1
     },
@@ -78,8 +79,8 @@
       "location": "Alcatraz Island",
       "image": "https://sgl-assets.imgix.net/files/article_hero/alcatraz-island-tour-san-francisco-via-magazine-shutterstock-213395542.jpg?w=1440&h=720&crop=faces,edges",
       "activities": [
-        "Learning about the historic Alcatraz prison",
-        "Daring to take the Alcatraz night tour"
+        "Learn about the historic Alcatraz prison",
+        "Dare to take the Alcatraz night tour"
       ],
       "likes": 8
     },
@@ -89,11 +90,11 @@
       "location": "Richmond/Sunset",
       "image": "https://media.cntraveler.com/photos/543d39fd00ac583c0af232fb/16:9/w_1600,c_limit/golden%2520gate%2520park-17.jpg",
       "activities": [
-        "Having a picnic with friends",
-        "Attending Outside Lands",
-        "Going to the DeYoung Museum",
-        "Exploring the California Academy of Sciences",
-        "Playing sloshball with friends"
+        "Have a picnic with friends",
+        "Attend Outside Lands",
+        "Go to the DeYoung Museum",
+        "Explore the California Academy of Sciences",
+        "Play sloshball with friends"
       ],
       "likes": 15
     },
@@ -103,21 +104,23 @@
       "location": "Presidio",
       "image": "https://www.californiabeaches.com/wp-content/uploads/2014/09/bigstock-Baker-Beach-San-Francisco-Large-1000x644.jpg",
       "activities": [
-        "Enjoying an amazing view of the Golden Gate Bridge",
-        "Having a beach picnic with friends",
-        "Bringing spike ball to enjoy friendly competition",
-        "Immersing yourself in the nude friendly environment"
+        "Enjoy an amazing view of the Golden Gate Bridge",
+        "Have a beach picnic with friends",
+        "Bring spike ball and enjoy friendly competition",
+        "Immerse yourself in the nude friendly environment"
       ],
-      "likes": 7
+      "likes": 8
     },
     {
       "name": "Crissy Field",
       "location": "Marina",
       "image": "https://api.time.com/wp-content/uploads/2017/08/crissy-field-san-francisco-protest.jpg?w=1600&quality=70",
       "activities": [
-        "Attending Fleet Week"
+        "Attend Fleet Week",
+        "Enjoy Philz with a water view",
+        "Taste different foods at Off The Grid"
       ],
-      "likes": 6,
+      "likes": 4,
       "id": 10
     }
   ]
