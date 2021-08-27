@@ -1,5 +1,14 @@
 body {
     text-align: center;
+    font-family: "Gill Sans", sans-serif;
+}
+#hero-image {
+    background-image: url("https://cdn.coverstand.com/44494/684703/article_assets/711ca7bba5cd3735a3a15f2aee44a7986840d771.jpg");
+    height: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 img {
@@ -33,6 +42,10 @@ a {
 }
 #random-container{
     text-align: center;
+    font-family: "Gill Sans", sans-serif;
+    /* background-color: rgb(40, 209, 153); */
+    background-color: rgb(255,215,0);
+    padding: 20px;
 }
 #random-gem .gem-card{
     justify-content: center;
@@ -51,7 +64,7 @@ a {
     background-color: white;
     overflow: hidden;
     width: 100%;
-    height: 20%;
+    height: 18%;
     opacity: 80%;
     transition: 1s ease;
 }
@@ -59,4 +72,31 @@ a {
 .gem-card:hover .overlay-info {
     height: 70%;
     opacity: 80%;
+}
+
+#comments {
+    font-family: "Gill Sans", sans-serif;
+    text-align: center;
+    word-wrap: normal;
+    width: 700px;
+    margin: auto;
+}
+
+#featured-comment {
+    font-size: 24px;
+}
+
+#random-button, #comment-button, #new-gem-button {
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    /* background-color: grey; */
+    background-color: teal;
+    color: white;
+    border: 2px;
+    font-family: "Gill Sans", sans-serif;
+}
+
+#add-gem-form {
+    line-height: 2;
 }

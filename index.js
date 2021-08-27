@@ -23,6 +23,9 @@ function init() {
 
         // randomly select a gem for the user
         randomGem(gemArray);
+
+        displayComment();
+        submitComment();
     })
 }
 
@@ -143,7 +146,6 @@ function randomGem(gemArray) {
         const randomCardDiv = document.querySelector("#random-gem")
 
         if (randomCardDiv.firstChild) {
-            console.log(randomCardDiv.firstChild.id)
             randomCardDiv.removeChild(randomCardDiv.firstChild)
         }
 
@@ -166,7 +168,7 @@ function randomGem(gemArray) {
 
 //         if (randomCardDiv.firstChild) {
 //             currentRanId = randomCardDiv.firstChild.id;
-//             console.log(currentRanId);
+//             // console.log(currentRanId);
 //             randomCardDiv.removeChild(randomCardDiv.firstChild);
 //         }
 
@@ -174,12 +176,52 @@ function randomGem(gemArray) {
 //             newRanIdNum = Math.floor(Math.random() * gemArray.length);
 //         }
 
-//         const randomGem = gemArray[newRanIdNum];
+//         // const randomGem = gemArray[newRanIdNum];
+
+//         const randomGem = gemArray.find(({id}) => id === newRanIdNum);
+//         console.log(randomGem);
 
 //         renderGemCard(randomGem, randomCardDiv);
 
 //         document.body.scrollTo(0, document.body.scrollHeight);
 //     })
 // }
+
+function displayComment() {
+    const commentP = document.querySelector("#featured-comment")
+    const commentsArray = [];
+
+    fetch("http://localhost:3000/comments")
+    .then(resp => resp.json())
+    .then(comments => {
+        comments.forEach(comment => {
+            commentsArray.push(comment)
+        });
+
+        const randomCommentIndex = Math.floor(Math.random() * commentsArray.length);
+        const randomComment = commentsArray[randomCommentIndex].comment;
+
+        commentP.textContent = `"${randomComment}"`;
+    })
+}
+
+function submitComment() {
+    const commentForm = document.querySelector("#comments-form");
+    
+    commentForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const comment = commentForm.querySelector("#comment-input").value;
+
+        fetch("http://localhost:3000/comments", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({comment})
+        })
+        commentForm.reset();
+    })
+}
 
 init()
