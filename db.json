@@ -122,6 +122,52 @@
       ],
       "likes": 4,
       "id": 10
+    },
+    {
+      "name": "Ghirardelli Square",
+      "location": "North Beach",
+      "image": "https://tclf.org/sites/default/files/thumbnails/image/CA_SanFrancisco_GhirardelliSquare_byDavidLloyd_2016_004_sig.jpg",
+      "activities": [
+        "Get ice cream from Ghirardelli",
+        "Grab a beer at San Francisco Brewing",
+        "Play mini golf at Subpar"
+      ],
+      "likes": 6,
+      "id": 11
+    },
+    {
+      "name": "Presidio of San Francisco",
+      "location": "Presidio",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZHOt1z37CPWz9zqE-9kUHiwQ2QGHvSjGB-Q&usqp=CAU",
+      "activities": [
+        "Eat delicious food truck meals on Off The Grid days",
+        "Visit the Walt Disney Museum",
+        "Play golf at Presidio Golf Course"
+      ],
+      "likes": 0,
+      "id": 12
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "comment": "I LOVE hanging out at Dolores Park. Whether you're celebrating a birthday or just soaking in the sun, there's something for everyone here!"
+    },
+    {
+      "comment": "Ice skating at Union Square during the holidays is one of my favorite SF activities! The area is nicely decorated, it's sure to get you in a merry spirit!",
+      "id": 2
+    },
+    {
+      "comment": "Beacon is one of my favorite coffee shops in North Beach. I enjoy grabbing a latte and heading up to Coit Tower for a beautiful view. ",
+      "id": 3
+    },
+    {
+      "comment": "The Alcatraz night tour is very organized, informative, and interesting. Just be sure to bring a jacket, it's very windy!",
+      "id": 4
+    },
+    {
+      "comment": "Golden Gate Park is basically California's version of Central Park. It's HUGE and there are so many things you can do - go to the Botanical Gardens, visit a museum, or lounge on the grass. ",
+      "id": 5
     }
   ]
 }

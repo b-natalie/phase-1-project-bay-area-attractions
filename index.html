@@ -6,6 +6,7 @@
         <title>San Francisco Gems</title>
     </head>
     <body>
+        <div id="hero-image"></div>
         <h1>San Francisco Gems</h1>
         <div id = "add-gem-container">
             <form id="add-gem-form">
@@ -15,11 +16,13 @@
                 <input type="text" id="location-input" placeholder="Neighborhood in SF"/>
                 <label><strong>Image: </strong></label>
                 <input type="text" id="img-input" placeholder="URL"/>
+                <br>
                 <label><strong>Recommended Activities: </strong></label>
                 <input type="text" id="activity-input1" placeholder="Activity 1"/>
                 <input type="text" id="activity-input2" placeholder="Activity 2"/>
                 <input type="text" id="activity-input3" placeholder="Activity 3"/>
-                <input type="submit" value="Submit" />
+                <br>
+                <input id="new-gem-button" type="submit" value="Submit" />
           </form>
         </div>
         <div id = "gem-container">
@@ -27,9 +30,19 @@
         </div>
         <div id = "random-container">
             <h2>Feeling Spontaneous?</h2>
-            <p>Let us plan your day! We'll randomly select an attraction and activity for you :)</p>
-            <button>Try Me</button>
+            <p>Let us plan your day!<br>We'll randomly select an attraction and activity for you</p>
+            <button id="random-button">Try Me</button>
             <div id = "random-gem"></div>
+        </div>
+        <div id = "Comments">
+            <h2>What People Are Saying</h2>
+            <p id="featured-comment"></p>
+            <form id = "comments-form">
+                <label><strong>Leave a comment: </strong></label><br><br>
+                <!-- <input type="text" id="comment-input" placeholder="Where do you love to go in SF?"/> -->
+                <textarea id="comment-input" rows="4" cols="50" placeholder="Where do you love to go in SF?"></textarea><br><br>
+                <input id="comment-button" type="submit" value="Submit" />
+            </form>
         </div>
     </body>
 </html>
