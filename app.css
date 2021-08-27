@@ -43,7 +43,8 @@ a {
 #random-container{
     text-align: center;
     font-family: "Gill Sans", sans-serif;
-    background-color: rgb(40, 209, 153);
+    /* background-color: rgb(40, 209, 153); */
+    background-color: rgb(255,215,0);
     padding: 20px;
 }
 #random-gem .gem-card{
@@ -89,7 +90,8 @@ a {
     border-radius: 10px;
     padding: 15px;
     font-size: 16px;
-    background-color: grey;
+    /* background-color: grey; */
+    background-color: teal;
     color: white;
     border: 2px;
     font-family: "Gill Sans", sans-serif;
